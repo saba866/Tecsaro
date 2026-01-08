@@ -1,0 +1,385 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* =====================================================
+   TECSARO — GLOBAL BRAND TOKENS (LIGHT MODE ONLY)
+   ===================================================== */
+
+:root {
+  /* ================= FOUNDATIONAL ================= */
+  --primary-dark: #0F172A;     /* Authority / Action */
+  --accent-teal: #14B8A6;      /* Insight / Guidance */
+  --page-bg: #F8FAFC;          /* Page background */
+  --card-bg: #FFFFFF;          /* Cards / surfaces */
+
+  /* ================= TEXT ================= */
+  --text-primary: #111827;     /* Headings, body */
+  --text-muted: #6B7280;       /* Meta, timestamps */
+  --text-disabled: #9CA3AF;    /* Disabled / dislike */
+
+  /* ================= BORDERS ================= */
+  --border-default: #E5E7EB;
+  --border-hover: #14B8A6;
+
+  /* ================= BUTTONS ================= */
+  --btn-primary-bg: #0F172A;
+  --btn-primary-text: #FFFFFF;
+  --btn-primary-hover: #020617;
+
+  --btn-secondary-bg: #E5E7EB;
+  --btn-secondary-text: #111827;
+  --btn-secondary-hover: #D1D5DB;
+
+  /* ================= ICONS ================= */
+  --icon-default: #6B7280;
+  --icon-active: #0F172A;
+  --icon-hover: #14B8A6;
+  --icon-disabled: #9CA3AF;
+
+  /* ================= LINKS ================= */
+  --link-default: #14B8A6;
+  --link-hover: #0D9488;
+
+  /* ================= SIDEBAR ================= */
+  --sidebar-bg: #FFFFFF;
+  --sidebar-text: #6B7280;
+  --sidebar-active-text: #0F172A;
+  --sidebar-active-icon: #14B8A6;
+  --sidebar-active-bg: #F0FDFA;
+
+  /* ================= AVATAR ================= */
+  --avatar-bg: #E5E7EB;
+  --avatar-text: #0F172A;
+  --avatar-ring: #14B8A6;
+
+  /* ================= STATUS (STRICT USE) ================= */
+  --status-success: #22C55E;
+  --status-warning: #F59E0B;
+  --status-error: #EF4444;
+
+  /* ================= RADIUS ================= */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+
+
+    /* -------- Arena / Debate Specific -------- */
+  --arena-bg-left: #ECFEFF;
+  --arena-bg-right: #F1F5F9;
+
+  --divider-teal: #14B8A6;
+
+  --vs-bg: #0F172A;
+  --vs-text: #FFFFFF;
+
+  --powerbar-bg: #E5E7EB;
+  --support-bar: #14B8A6;
+  --against-bar: #9CA3AF;
+
+  /* -------- Neutral UI -------- */
+  --bubble-bg: #FFFFFF;
+  --bubble-border: #E5E7EB;
+  --avatar-bg-neutral: #E5E7EB;
+
+  /* -------- Disabled / Muted -------- */
+  --muted-gray: #6B7280;
+  --muted-light: #9CA3AF;
+
+  /* -------- Hover / Accent -------- */
+  --accent-hover-dark: #020617;
+  --accent-hover-teal: #0D9488;
+}
+
+
+/* =====================================================
+   BASE LAYER
+   ===================================================== */
+
+@layer base {
+  * {
+    border-color: var(--border-default);
+  }
+
+  body {
+    background-color: var(--page-bg);
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  a {
+    color: var(--link-default);
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: var(--link-hover);
+  }
+}
+
+/* =====================================================
+   BUTTON UTILITIES (OPTIONAL HELPERS)
+   ===================================================== */
+
+.btn-primary {
+  background-color: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+}
+.btn-primary:hover {
+  background-color: var(--btn-primary-hover);
+}
+
+.btn-secondary {
+  background-color: var(--btn-secondary-bg);
+  color: var(--btn-secondary-text);
+}
+.btn-secondary:hover {
+  background-color: var(--btn-secondary-hover);
+}
+
+.btn-ghost {
+  color: var(--primary-dark);
+}
+.btn-ghost:hover {
+  background-color: var(--border-default);
+}
+
+/* =====================================================
+   ICON STATES
+   ===================================================== */
+
+.icon-default { color: var(--icon-default); }
+.icon-active { color: var(--icon-active); }
+.icon-hover:hover { color: var(--icon-hover); }
+.icon-disabled { color: var(--icon-disabled); }
+
+/* =====================================================
+   CARDS & SURFACES
+   ===================================================== */
+
+.card {
+  background-color: var(--card-bg);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-default);
+}
+
+.card-hover:hover {
+  border-color: var(--border-hover);
+}
+
+/* =====================================================
+   SCROLLBAR (HIDDEN, SCROLL ENABLED)
+   ===================================================== */
+
+::-webkit-scrollbar {
+  display: none;
+}
+* {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+/* =====================================================
+   3D / FLIP UTILITIES (CLEAN & SINGLE SOURCE)
+   ===================================================== */
+
+.perspective {
+  perspective: 1200px;
+}
+.transform-style-preserve-3d {
+  transform-style: preserve-3d;
+}
+.backface-hidden {
+  backface-visibility: hidden;
+}
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+/* =====================================================
+   CARD GLOSS (VERY SUBTLE, OPTIONAL)
+   ===================================================== */
+
+.card-gloss::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    115deg,
+    rgba(255,255,255,0.15) 0%,
+    rgba(255,255,255,0.03) 45%,
+    rgba(255,255,255,0.12) 100%
+  );
+  pointer-events: none;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card-gloss:hover::before {
+  opacity: 1;
+}
+
+/* =====================================================
+   BRAND RULE (DO NOT BREAK)
+   ===================================================== */
+/*
+Tecsaro doesn’t shout.
+It thinks clearly.
+
+- Navy = authority & action
+- Teal = guidance & insight
+- Gray = neutrality
+- Red / Green = system only
+- No emotional colors for opinions
+- Light mode only
+*/
+
+
+
+/* =====================================================
+   TAILWIND SEMANTIC UTILITIES (NO CONFIG FILE)
+   ===================================================== */
+
+@layer utilities {
+  /* Backgrounds */
+  .bg-background { background-color: var(--page-bg); }
+  .bg-card { background-color: var(--card-bg); }
+  .bg-accent { background-color: var(--sidebar-active-bg); }
+
+  /* Text */
+  .text-foreground { color: var(--primary-dark); }
+  .text-text { color: var(--text-primary); }
+  .text-muted { color: var(--text-muted); }
+  .text-primary { color: var(--accent-teal); }
+  .text-primary-hover:hover { color: var(--link-hover); }
+
+  /* Borders */
+  .border-border { border-color: var(--border-default); }
+
+  /* Rings */
+  .ring-primary { --tw-ring-color: var(--accent-teal); }
+
+  /* ================= AVATAR (FIXED) ================= */
+  .bg-avatar { background-color: var(--avatar-bg); }
+  .text-avatar { color: var(--avatar-text); }
+  .ring-avatar { --tw-ring-color: var(--avatar-ring); }
+
+    /* ===== debate STATUS COLORS ===== */
+.debate-text-status-error { color: var(--status-error); }
+.debate-text-status-warning { color: var(--status-warning); }
+.debate-text-status-success { color: var(--status-success); }
+  /* ================= MISSING UTILITIES (DO NOT REMOVE) ================= */
+
+  .bg-primary {
+    background-color: var(--accent-teal);
+  }
+
+  
+/* ================= HOVER BORDER UTILITY (DO NOT REMOVE) ================= */
+.hover-border-hover:hover {
+  border-color: var(--border-hover);
+}
+
+  /* ================= DANGER BUTTON ================= */
+  .btn-danger {
+    background-color: var(--status-error); /* red */
+    color: var(--primary-dark);             /* black/navy text */
+  }
+
+  .btn-danger:hover {
+    opacity: 0.9;
+  }
+
+
+  /* ================= PRIMARY BUTTON (FORCE NAVY EVEN WHEN DISABLED) ================= */
+
+.btn-primary {
+  background-color: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+}
+
+/* 👇 THIS IS THE KEY FIX */
+.btn-primary:disabled {
+  background-color: var(--btn-primary-bg); /* still navy */
+  color: var(--btn-primary-text);           /* still white */
+  opacity: 0.85;                            /* subtle disabled feel */
+  cursor: not-allowed;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: var(--btn-primary-hover);
+}
+  /* Arena */
+  .bg-arena-left { background-color: var(--arena-bg-left); }
+  .bg-arena-right { background-color: var(--arena-bg-right); }
+
+  /* Divider */
+  .bg-divider { background-color: var(--divider-teal); }
+
+  /* VS Badge */
+ .bg-vs {
+    background-color: var(--primary-dark); /* dark navy */
+  }
+
+  .text-vs-text {
+    color: #ffffff; /* pure white */
+  }
+
+
+  /* Power bar */
+  .bg-powerbar { background-color: var(--powerbar-bg); }
+  .bg-support { background-color: var(--support-bar); }
+  .bg-against { background-color: var(--against-bar); }
+
+  /* Bubble */
+  .bg-bubble { background-color: var(--bubble-bg); }
+  .border-bubble { border-color: var(--bubble-border); }
+
+  /* Avatar */
+  .bg-avatar-neutral { background-color: var(--avatar-bg-neutral); }
+
+  /* Text */
+  .text-muted-gray { color: var(--muted-gray); }
+  .text-muted-light { color: var(--muted-light); }
+
+  /* Hover */
+  .hover-accent-dark:hover { background-color: var(--accent-hover-dark); }
+  .hover-accent-teal:hover { color: var(--accent-hover-teal); }
+
+
+  /* ===== STATUS TEXT ===== */
+  .text-status-error {
+    color: var(--status-error);
+  }
+
+  /* ===== ACCENT TEXT (teal) ===== */
+  .text-accent {
+    color: var(--accent-teal);
+  }
+
+  /* ===== DISABLED TEXT ===== */
+  .text-text-disabled {
+    color: var(--text-disabled);
+  }
+
+  /* ===== SOFT NEUTRAL BACKGROUND ===== */
+  .bg-neutral-soft {
+    background-color: #F3F4F6; /* equivalent to gray-100 */
+  }
+
+  /* ===== WIN BADGES ===== */
+  .bg-win-support {
+    background-color: #ECFDF5; /* emerald-100 */
+  }
+  .text-win-support-text {
+    color: #065F46; /* emerald-800 */
+  }
+
+  .bg-win-against {
+    background-color: #FFF1F2; /* rose-100 */
+  }
+  .text-win-against-text {
+    color: #9F1239; /* rose-800 */
+  }
+}
