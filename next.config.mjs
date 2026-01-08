@@ -1,3 +1,17 @@
+// /** @type {import('next').NextConfig} */
+// const nextConfig = {
+//   typescript: {
+//     ignoreBuildErrors: true,
+//   },
+//   images: {
+//     unoptimized: true,
+//   },
+// }
+
+// export default nextConfig
+
+
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   typescript: {
@@ -6,6 +20,13 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-}
 
-export default nextConfig
+  // 👇 This fixes wrong project root and ensures sitemap deploys
+  experimental: {
+    turbopack: {
+      root: __dirname,
+    },
+  },
+};
+
+export default nextConfig;

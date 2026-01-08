@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.tecsaro.com
+
+# Sitemaps
+Sitemap: https://www.tecsaro.com/sitemap.xml
