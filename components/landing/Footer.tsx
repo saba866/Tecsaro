@@ -82,24 +82,55 @@ export default function Footer() {
             © {new Date().getFullYear()} Tecsaro. All rights reserved.
           </p>
 
+         
           {/* Social Icons */}
-          <div className="flex items-center gap-5">
-            <Link href="#" aria-label="LinkedIn" className="hover:text-primary transition">
-              <Linkedin size={18} />
-            </Link>
-            <Link href="#" aria-label="X (Twitter)" className="hover:text-primary transition">
-              <Twitter size={18} />
-            </Link>
-            <Link href="#" aria-label="YouTube" className="hover:text-primary transition">
-              <Youtube size={18} />
-            </Link>
-            <Link href="#" aria-label="Instagram" className="hover:text-primary transition">
-              <Instagram size={18} />
-            </Link>
-            <Link href="#" aria-label="Facebook" className="hover:text-primary transition">
-              <Facebook size={18} />
-            </Link>
-          </div>
+<div className="flex items-center gap-5">
+  <Link 
+    href="https://www.linkedin.com/company/tecsarohq" 
+    target="_blank" 
+    aria-label="LinkedIn" 
+    className="hover:text-primary transition"
+  >
+    <Linkedin size={18} />
+  </Link>
+
+  <Link 
+    href="https://x.com/tecsarohq" 
+    target="_blank" 
+    aria-label="X (Twitter)" 
+    className="hover:text-primary transition"
+  >
+    <Twitter size={18} />
+  </Link>
+
+  <Link 
+    href="https://youtube.com/@tecsarohq" 
+    target="_blank" 
+    aria-label="YouTube" 
+    className="hover:text-primary transition"
+  >
+    <Youtube size={18} />
+  </Link>
+
+  <Link 
+    href="https://instagram.com/tecsarohq" 
+    target="_blank" 
+    aria-label="Instagram" 
+    className="hover:text-primary transition"
+  >
+    <Instagram size={18} />
+  </Link>
+
+  <Link 
+    href="https://facebook.com/tecsaroHQ" 
+    target="_blank" 
+    aria-label="Facebook" 
+    className="hover:text-primary transition"
+  >
+    <Facebook size={18} />
+  </Link>
+</div>
+
 
         </div>
       </div>
