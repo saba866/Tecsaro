@@ -13,12 +13,11 @@ const nextConfig = {
     unoptimized: true,
   },
 
-  // 👇 This fixes wrong project root and ensures sitemap deploys
-  experimental: {
-    turbopack: {
-      root: __dirname,
-    },
+  // Fixes workspace root detection for Turbopack
+  turbopack: {
+    root: __dirname,
   },
 };
+
 
 export default nextConfig;

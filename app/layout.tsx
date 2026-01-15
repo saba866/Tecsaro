@@ -124,6 +124,54 @@
 
 
 
+// import type { Metadata } from "next";
+// import { Inter } from "next/font/google";
+// import { Analytics } from "@vercel/analytics/next";
+// import "./globals.css";
+
+// const inter = Inter({
+//   subsets: ["latin"],
+//   display: "swap",
+// });
+
+// export const metadata: Metadata = {
+//   title: {
+//     default: "Tecsaro",
+//     template: "%s | Tecsaro",
+//   },
+//   description:
+//     "Tecsaro is a decision intelligence platform offering business case studies, insights, news explanations, tools, and playbooks — helping you think better and make smarter business decisions.",
+//   openGraph: {
+//     type: "website",
+//     locale: "en_US",
+//     url: "https://tecsaro.com",
+//     siteName: "Tecsaro — Decision Intelligence for Business Thinkers",
+//     images: [
+//       {
+//         url: "/og-image.png",
+//         width: 1200,
+//         height: 630,
+//         alt: "Tecsaro — Business Case Studies and Insights",
+//       },
+//     ],
+//   },
+//   twitter: {
+//     card: "summary_large_image",
+//     site: "@tecsarohq",
+//     creator: "@tecsarohq",
+//     images: ["/og-image.png"],
+//   },
+//   icons: {
+//     icon: "/favicon.ico",
+//     shortcut: "/favicon.ico",
+//     apple: "/apple-touch-icon.png",
+//   },
+// };
+
+
+
+
+
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
@@ -146,11 +194,20 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://tecsaro.com",
     siteName: "Tecsaro — Decision Intelligence for Business Thinkers",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Tecsaro — Business Case Studies and Insights",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     site: "@tecsarohq",
     creator: "@tecsarohq",
+    images: ["/og-image.png"],
   },
   icons: {
     icon: "/favicon.ico",
@@ -159,7 +216,11 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.className} antialiased`}>
